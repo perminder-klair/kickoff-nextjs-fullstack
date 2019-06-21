@@ -15,7 +15,6 @@ const typeDefs = gql`
     id: ID! # "!" denotes a required field
     email: String
     status: UserStatus
-    store: Store
   }
   type JwtUser {
     jwt: String
