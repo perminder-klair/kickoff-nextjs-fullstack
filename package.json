@@ -1,16 +1,47 @@
 {
   "name": "kickoff-apollo-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Kickoff for Apollo Graphql Server",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/index.js",
+    "build": "babel src --out-dir dist --copy-files",
+    "serve": "npx babel-node src/index.js",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "lint": "eslint --fix --ext .jsx,.js src/*.js src/**/*.js src/**/**/*.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Parminder Klair",
+  "license": "MIT",
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
     "apollo-server": "^2.6.4",
-    "graphql": "^14.3.1"
+    "bcryptjs": "^2.4.3",
+    "convict": "^5.0.0",
+    "dotenv": "^8.0.0",
+    "ejs": "^2.6.2",
+    "email-templates": "^5.1.0",
+    "graphql": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.11",
+    "merge-graphql-schemas": "^1.5.8",
+    "mongoose": "^5.6.0",
+    "nodemailer": "^6.2.1",
+    "randomstring": "^1.1.5",
+    "winston": "^3.2.1",
+    "winston-mongodb": "^5.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2"
   }
 }
