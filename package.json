@@ -5,9 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "build": "babel src --out-dir dist --copy-files",
-    "serve": "npx babel-node src/index.js",
     "dev": "nodemon --exec babel-node src/index.js",
+    "build": "babel src --out-dir dist --copy-files",
     "lint": "eslint --fix --ext .jsx,.js src/*.js src/**/*.js src/**/**/*.js"
   },
   "keywords": [],
