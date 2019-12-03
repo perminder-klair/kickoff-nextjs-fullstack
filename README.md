@@ -21,10 +21,6 @@
 ### Setup
 
 ```bash
-  # clone the repository
-  λ git clone https://github.com/perminder-klair/kickoff-apollo-server
-  # change the current directory
-  λ cd kickoff-apollo-server
   # install all dependencies
   λ yarn install
   # run the project
@@ -33,7 +29,6 @@
 
 ### Scripts
 
-- `yarn start` - simply starts the server
-- `yarn dev` - starts the server in dev mode with hot-reloading
-- `yarn build` - build code using babel
-- `yarn lint` - lints all the files in `src/` folder
+- `yarn dev`     - starts the server in dev mode with hot-reloading
+- `yarn lint`    - lints all the files in `src/` folder
+- `yarn deploy`  - deploy live to now.sh host
