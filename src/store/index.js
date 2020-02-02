@@ -1,0 +1,24 @@
+import { createStore } from 'easy-peasy';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import schema from './schema';
+import config from '../utils/config';
+
+export function initializeStore(initialState) {
+  const store = createStore(schema, {
+    name: config.projectKey,
+    devTools: true,
+    reducerEnhancer: reducer =>
+      persistReducer(
+        {
+          key: config.projectKey,
+          storage,
+        },
+        reducer,
+      ),
+  });
+
+  const persistor = persistStore(store);
+
+  return store;
+}
