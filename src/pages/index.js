@@ -7,7 +7,7 @@ import Layout from '../components/Layout';
 
 function Index(props) {
   const { degrees = [], universities = [] } = props;
-  // console.log('data', degrees, universities);
+  console.log('data', degrees, universities);
 
   const handleContact = () => {
     console.log('handleContact');
@@ -16,10 +16,10 @@ function Index(props) {
         firstName: 'Fred',
         lastName: 'Flintstone',
       })
-      .then(function(response) {
+      .then(response => {
         console.log(response.data);
       })
-      .catch(function(error) {
+      .catch(error => {
         console.log(error);
       });
   };
@@ -35,7 +35,10 @@ function Index(props) {
         <p className="subtitle">
           My first website with <strong>NextJs</strong>!
         </p>
-        <button className="button is-light" onClick={handleContact}>
+        <button
+          type="button"
+          className="button is-light"
+          onClick={handleContact}>
           Send Contact Message
         </button>
       </section>

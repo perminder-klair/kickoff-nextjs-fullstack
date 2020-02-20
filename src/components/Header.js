@@ -19,6 +19,7 @@ export default () => (
           <a className="navbar-item has-text-black is-size-4">
             <img
               src={require('../assets/images/dummy.jpg?resize&size=300&url&lqip')}
+              alt="dummy"
             />
           </a>
         </Link>

@@ -4,7 +4,7 @@ import storage from 'redux-persist/lib/storage';
 import schema from './schema';
 import config from '../utils/config';
 
-export function initializeStore(initialState) {
+export function initializeStore() {
   const store = createStore(schema, {
     name: config.projectKey,
     devTools: true,
