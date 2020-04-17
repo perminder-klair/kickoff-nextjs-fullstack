@@ -1,14 +1,9 @@
 {
-	"name": "kickoff-apollo-server",
   "version": 2,
   "env": {
     "NODE_ENV": "development"
   },
   "regions": ["bru"],
-  "builds": [
-    { "src": "/api/*.js", "use": "@now/node" }
-  ],
-  "routes": [
-    { "src": "/api", "dest": "/index.js" }
-  ]
+  "builds": [{ "src": "/api/*.js", "use": "@now/node" }],
+  "routes": [{ "src": "/api", "dest": "/index.js" }]
 }
