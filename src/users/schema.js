@@ -7,10 +7,6 @@ const typeDefs = gql`
     banned
   }
 
-  type Success {
-    success: Boolean
-  }
-
   type User {
     id: ID! # "!" denotes a required field
     email: String
