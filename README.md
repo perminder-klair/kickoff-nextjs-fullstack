@@ -3,6 +3,7 @@
 > An opinionated boilerplate for apollo graphql with batteries included.
 
 #### Requirements
+
 ```bash
 - Node >=v10.16.0
 - NPM >=v6.9.0
@@ -10,6 +11,7 @@
 ```
 
 #### Features
+
 ```bash
 - Apollo Graphql
 - User Authorisation (Login, Register, Reset Password, Update User)
@@ -29,6 +31,6 @@
 
 ### Scripts
 
-- `yarn dev`     - starts the server in dev mode with hot-reloading
-- `yarn lint`    - lints all the files in `src/` folder
-- `yarn deploy`  - deploy live to now.sh host
+- `yarn dev` - starts the server in dev mode with hot-reloading
+- `yarn lint` - lints all the files in `src/` folder
+- `yarn deploy` - deploy live to now.sh host

@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 function connectDatabase(uri) {
   mongoose.connection
-    .on('error', error => console.log(error))
+    .on('error', (error) => console.log(error))
     .on('close', () => console.log('Database connection closed.'))
     .once('open', () => {
       const info = mongoose.connections[0];
