@@ -1,8 +1,6 @@
 const withPlugins = require('next-compose-plugins');
 const withCSS = require('@zeit/next-css');
 const withMDX = require('@next/mdx')();
-const withImages = require('next-images');
-const withOptimizedImages = require('next-optimized-images');
 
 const nextConfig = {
   target: 'serverless',
@@ -21,7 +19,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins(
-  [withOptimizedImages, withImages, withMDX, withCSS],
-  nextConfig,
-);
+module.exports = withPlugins([withMDX, withCSS], nextConfig);

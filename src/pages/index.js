@@ -16,10 +16,10 @@ function Index(props) {
         firstName: 'Fred',
         lastName: 'Flintstone',
       })
-      .then(response => {
+      .then((response) => {
         console.log(response.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };
