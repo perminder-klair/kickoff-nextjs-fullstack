@@ -8,41 +8,49 @@
   "license": "MIT",
   "scripts": {
     "dev": "micro-dev src --port 4000 --silent",
-    "lint": "eslint --fix --ext .jsx,.js src/*.js src/**/*.js src/**/**/*.js",
-    "deploy": "now --prod"
+    "lint": "eslint --fix --ext .jsx,.js src/**.js src/**/**.js src/**/**/**.js",
+    "deploy": "now --prod --local-config vercel.json"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint"
+    }
   },
   "dependencies": {
     "@babel/polyfill": "^7.10.4",
-    "@babel/register": "^7.10.5",
-    "apollo-server-micro": "^2.12.0",
+    "@babel/register": "^7.12.10",
+    "apollo-server-micro": "^2.19.1",
     "bcryptjs": "^2.4.3",
     "convict": "^6.0.0",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
-    "email-templates": "^7.1.0",
-    "graphql": "^14.5.8",
+    "email-templates": "^8.0.2",
+    "graphql": "^14.1.1",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20",
     "merge-graphql-schemas": "^1.7.8",
     "micro": "^9.3.4",
     "micro-cors": "^0.1.1",
     "micro-dev": "^3.0.0",
-    "mongoose": "^5.10.0",
-    "nodemailer": "^6.4.11",
+    "mongoose": "^5.11.10",
+    "nodemailer": "^6.4.17",
     "randomstring": "^1.1.5",
     "winston": "^3.3.3",
-    "winston-mongodb": "^5.0.1"
+    "winston-mongodb": "^5.0.5"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.11.1",
-    "@babel/node": "^7.10.5",
-    "@babel/preset-env": "^7.11.0",
-    "eslint": "^7.7.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.0.5"
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "husky": "^4.3.6",
+    "prettier": "^2.2.1"
   }
 }
