@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import styled from 'styled-components';
+import config from '../utils/config';
 
 const NavTitle = styled.div`
   align-self: center;
@@ -17,7 +17,7 @@ const Header = () => (
     <NavTitle className="navbar-brand">
       <Link href="/">
         <a className="navbar-item has-text-black is-size-4">
-          <Image src="/images/dummy.jpg" height="90" width="90" alt="dummy" />
+          <span>{config.siteName}</span>
         </a>
       </Link>
     </NavTitle>
@@ -27,7 +27,10 @@ const Header = () => (
           <a className="navbar-item">Home</a>
         </Link>
         <Link href="/about">
-          <a className="navbar-item">About </a>
+          <a className="navbar-item">About</a>
+        </Link>
+        <Link href="/contact">
+          <a className="navbar-item">Contact</a>
         </Link>
       </div>
     </div>

@@ -5,6 +5,7 @@ import { generateToken } from '../utils/auth';
 import User from './database';
 import mailer, { renderTemplate } from '../utils/mailer';
 import config from '../utils/config';
+import clientConfig from '../../utils/config';
 
 export default {
   Query: {
@@ -38,7 +39,7 @@ export default {
         user,
       });
       const mailOptions = {
-        to: `"Site User" <${user.email}>`,
+        to: `"${clientConfig.siteName}" <${user.email}>`,
         from: config.get('adminEmail'),
         subject,
         html,
@@ -88,10 +89,10 @@ export default {
       await User.updateOne({ email: input.email }, { resetPasswordToken });
 
       const [html, subject] = await renderTemplate('forgot-password', {
-        resetPasswordLink: `${webAppUrl}/set-password/${resetPasswordToken}`,
+        resetPasswordLink: `${webAppUrl}/auth/set-password?token={resetPasswordToken}`,
       });
       const mailOptions = {
-        to: `"Site User" <${input.email}>`,
+        to: `"${clientConfig.siteName}" <${input.email}>`,
         from: config.get('adminEmail'),
         subject,
         html,

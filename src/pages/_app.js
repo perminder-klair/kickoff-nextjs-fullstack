@@ -3,8 +3,10 @@ import Head from 'next/head';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { StoreProvider } from 'easy-peasy';
+import { ApolloProvider } from '@apollo/client/react';
 
 import withReduxStore from '../utils/with-redux-store';
+import apolloClient from '../utils/apolloClient';
 import theme, { GlobalStyle } from '../utils/theme';
 import config from '../utils/config';
 
@@ -15,7 +17,7 @@ class MyApp extends App {
     return (
       <ThemeProvider theme={theme}>
         <StoreProvider store={reduxStore}>
-          <>
+          <ApolloProvider client={apolloClient}>
             <Head>
               <title>{config.siteName}</title>
               <link
@@ -25,7 +27,7 @@ class MyApp extends App {
             </Head>
             <Component {...pageProps} />
             <GlobalStyle />
-          </>
+          </ApolloProvider>
         </StoreProvider>
       </ThemeProvider>
     );
