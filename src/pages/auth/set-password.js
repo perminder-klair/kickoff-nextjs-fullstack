@@ -41,7 +41,7 @@ const SetPassword = () => {
     if (error) {
       swal(error.message);
     }
-    if (data && data.contact) {
+    if (data && data.setNewPassword) {
       swal('Password changed!');
     }
   }, [error, data]);

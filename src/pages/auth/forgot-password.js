@@ -38,7 +38,7 @@ const ForgotPassword = () => {
     if (error) {
       swal(error.message);
     }
-    if (data && data.contact) {
+    if (data && data.forgotPassword) {
       swal('Password changed!');
     }
   }, [error, data]);
