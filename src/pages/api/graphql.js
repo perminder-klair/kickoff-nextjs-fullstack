@@ -1,16 +1,17 @@
-import { ApolloServer } from 'apollo-server-micro';
+import { ApolloServer, makeExecutableSchema } from 'apollo-server-micro';
 import connectDatabase from '../../graphql/utils/mongoose';
-import config from '../../graphql/utils/config';
-import { typeDefs, resolvers } from '../../graphql/utils/graphql';
+import { typeDefs, resolvers } from '../../graphql';
 import { isAuthenticated } from '../../graphql/utils/auth';
+import apiConfig from '../../graphql/utils/config';
 
 const cors = require('micro-cors')();
 
-connectDatabase(config.get('mongodb'));
+connectDatabase(apiConfig.get('mongodb'));
+
+export const schema = makeExecutableSchema({ typeDefs, resolvers });
 
 const server = new ApolloServer({
-  typeDefs,
-  resolvers,
+  schema,
   introspection: true,
   playground: true,
   context: async ({ req }) => ({
@@ -24,7 +25,13 @@ const optionsHandler = (req, res) => {
     return;
   }
   // eslint-disable-next-line consistent-return
-  return server.createHandler({ path: '/api' })(req, res);
+  return server.createHandler({ path: '/api/graphql' })(req, res);
 };
 
-module.exports = cors(optionsHandler);
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
+export default cors(optionsHandler);

@@ -26,9 +26,10 @@ function Index() {
         description="A short description goes here."
       />
       <section className="section">
-        <h1 className="title">Hello World!!</h1>
+        <h1 className="title">Hello World!</h1>
         <p className="subtitle">
-          My first website with <strong>NextJs</strong>!
+          My first website with <strong>NextJs</strong> and{' '}
+          <strong>Apollo GraphQl</strong>!
         </p>
         <button
           type="button"
