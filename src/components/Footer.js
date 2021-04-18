@@ -8,7 +8,7 @@ const Container = styled.div`
 
 const Footer = () => (
   <Container className="container is-flex">
-    <p>Copyright © 2020 Kickoff NextJs.</p>
+    <p>Copyright © 2021 Kickoff Apollo NextJs Server.</p>
   </Container>
 );
 

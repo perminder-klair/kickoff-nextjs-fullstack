@@ -1,4 +1,4 @@
-# Kickoff NextJs
+# Kickoff NextJs Apollo Server
 
 A starting point using ReactJs, bundled with awesome NextJs.
 Fetch data from Sanity CMS
@@ -7,7 +7,7 @@ Fetch data from Sanity CMS
 
 - [Next.js](https://nextjs.org/)
 - [React.js](https://facebook.github.io/react/)
-- [Sanity](https://www.sanity.io/)
+- [Apollo Server](https://www.apollographql.com/)
 
 ## To use
 

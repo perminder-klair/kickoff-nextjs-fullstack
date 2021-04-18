@@ -19,6 +19,7 @@ export function initializeStore() {
       ),
   });
 
+  // eslint-disable-next-line no-unused-vars
   const persistor = persistStore(store);
 
   return store;

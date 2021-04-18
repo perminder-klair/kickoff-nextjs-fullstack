@@ -16,18 +16,24 @@
         "singleQuote": true,
         "trailingComma": "all",
         "bracketSpacing": true,
-        "jsxBracketSameLine": true
+        "jsxBracketSameLine": false
       }
     ],
+    "global-require": "off",
+    "no-underscore-dangle": "off",
+    "import/prefer-default-export": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": "off",
     "react/prop-types": "off",
+    "react/forbid-prop-types": "off",
+    "react/jsx-props-no-spreading": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "no-underscore-dangle": "off",
-    "import/prefer-default-export": "off",
-    "global-require": "off"
+    "jsx-a11y/label-has-associated-control": "off"
   },
   "globals": {
     "window": true
+  },
+  "env": {
+    "jest": true
   }
 }
