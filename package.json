@@ -6,7 +6,7 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "next --port 4000",
     "start": "next start",
     "build": "next build",
     "deploy": "vercel --prod",
