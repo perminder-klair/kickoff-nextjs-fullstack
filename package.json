@@ -6,7 +6,7 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "next --port 4000",
     "start": "next start",
     "build": "next build",
     "deploy": "vercel --prod",
@@ -18,6 +18,7 @@
     }
   },
   "dependencies": {
+    "@apollo/client": "^3.3.15",
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^10.1.3",
     "@zeit/next-css": "^1.0.1",
@@ -27,9 +28,10 @@
     "convict": "^6.0.1",
     "dotenv": "^8.2.0",
     "easy-peasy": "^5.0.3",
+    "formik": "^2.2.6",
+    "graphql": "^15.5.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
-    "graphql": "^15.5.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "lqip-loader": "^2.2.1",
@@ -47,7 +49,9 @@
     "react-dom": "^17.0.2",
     "redux-persist": "^6.0.0",
     "styled-components": "^5.2.3",
-    "winston": "^3.3.3"
+    "sweetalert": "^2.1.2",
+    "winston": "^3.3.3",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
