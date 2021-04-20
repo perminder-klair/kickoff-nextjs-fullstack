@@ -89,7 +89,7 @@ export default {
       await User.updateOne({ email: input.email }, { resetPasswordToken });
 
       const [html, subject] = await renderTemplate('forgot-password', {
-        resetPasswordLink: `${webAppUrl}/auth/set-password?token={resetPasswordToken}`,
+        resetPasswordLink: `${webAppUrl}/auth/set-password?token=${resetPasswordToken}`,
       });
       const mailOptions = {
         to: `"${clientConfig.siteName}" <${input.email}>`,
