@@ -4,9 +4,7 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "airbnb",
-    "plugin:prettier/recommended",
-    "prettier/react",
-    "prettier/standard"
+    "plugin:prettier/recommended"
   ],
   "plugins": ["prettier"],
   "rules": {
@@ -28,7 +26,9 @@
     "react/forbid-prop-types": "off",
     "react/jsx-props-no-spreading": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "jsx-a11y/label-has-associated-control": "off"
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off"
   },
   "globals": {
     "window": true
