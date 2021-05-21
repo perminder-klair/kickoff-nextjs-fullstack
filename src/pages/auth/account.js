@@ -1,7 +1,7 @@
 import { NextSeo } from 'next-seo';
 import styled from 'styled-components';
 import { useStoreState } from 'easy-peasy';
-import { gql } from '@apollo/client';
+import { gql, useQuery } from '@apollo/client';
 
 import config from '../../utils/config';
 import Layout from '../../components/Layout';
@@ -33,8 +33,11 @@ const meQuery = gql`
 
 const Account = ({ me }) => {
   const isLoggedIn = useStoreState((state) => state.isLoggedIn.value);
+  const { data } = useQuery(meQuery);
+
   console.log('isLoggedIn', isLoggedIn);
-  console.log('me', me);
+  console.log('server side data', me);
+  console.log('client side data', data);
 
   return (
     <Layout>
