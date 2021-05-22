@@ -64,7 +64,11 @@ const Account = ({ me }) => {
 export default Account;
 
 export async function getServerSideProps(ctx) {
-  const data = await apolloQuerySsr(ctx, meQuery, false);
+  const data = await apolloQuerySsr({
+    ctx,
+    query: meQuery,
+    skipRedirect: false,
+  });
   // console.log('apollo data', data);
 
   return {

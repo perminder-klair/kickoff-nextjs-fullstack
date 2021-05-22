@@ -1,10 +1,9 @@
 {
   "parser": "babel-eslint",
   "extends": [
-    "next",
     "eslint:recommended",
     "plugin:react/recommended",
-    // "airbnb",
+    "airbnb",
     "plugin:prettier/recommended"
   ],
   "plugins": ["prettier"],

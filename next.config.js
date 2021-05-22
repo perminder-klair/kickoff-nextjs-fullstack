@@ -7,9 +7,6 @@ const nextConfig = {
   env: {
     SANITY_TOKEN: '',
   },
-  experimental: {
-    eslint: true,
-  },
   images: {
     domains: ['assets.vercel.com'],
   },

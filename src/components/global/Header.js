@@ -4,7 +4,7 @@ import { useStoreState, useStoreActions } from 'easy-peasy';
 import Router, { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 
-import config from '../utils/config';
+import config from '../../utils/config';
 
 const NavTitle = styled.div`
   align-self: center;
@@ -48,6 +48,9 @@ const Header = () => {
           </Link>
           <Link href="/about">
             <a className="navbar-item">About</a>
+          </Link>
+          <Link href="/blog">
+            <a className="navbar-item">Blog</a>
           </Link>
           <Link href="/contact">
             <a className="navbar-item">Contact</a>

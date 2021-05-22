@@ -9,7 +9,7 @@ import Cookies from 'js-cookie';
 
 import config from '../../utils/config';
 import Layout from '../../components/Layout';
-import LoginForm from '../../components/forms/LoginForm';
+import LoginForm from '../../components/auth/LoginForm';
 
 const Section = styled.section`
   p {

@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 
 import config from '../../utils/config';
 import Layout from '../../components/Layout';
-import SetPasswordForm from '../../components/forms/SetPasswordForm';
+import SetPasswordForm from '../../components/auth/SetPasswordForm';
 
 const Section = styled.section`
   p {

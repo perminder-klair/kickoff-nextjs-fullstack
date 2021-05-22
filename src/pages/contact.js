@@ -6,7 +6,7 @@ import swal from 'sweetalert';
 
 import config from '../utils/config';
 import Layout from '../components/Layout';
-import ContactForm from '../components/forms/ContactForm';
+import ContactForm from '../components/global/ContactForm';
 
 const Section = styled.section`
   p {

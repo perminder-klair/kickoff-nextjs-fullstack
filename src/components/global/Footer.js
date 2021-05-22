@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import config from '../utils/config';
+import config from '../../utils/config';
 
 const Container = styled.div`
   height: 6rem;

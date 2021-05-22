@@ -6,7 +6,7 @@ import swal from 'sweetalert';
 
 import config from '../../utils/config';
 import Layout from '../../components/Layout';
-import ForgotPasswordForm from '../../components/forms/ForgotPasswordForm';
+import ForgotPasswordForm from '../../components/auth/ForgotPasswordForm';
 
 const Section = styled.section`
   p {

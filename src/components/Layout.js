@@ -1,5 +1,5 @@
-import Header from './Header';
-import Footer from './Footer';
+import Header from './global/Header';
+import Footer from './global/Footer';
 
 const Layout = ({ children }) => (
   <div className="container">

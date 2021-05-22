@@ -35,7 +35,12 @@ const apolloClientSsr = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export const apolloQuerySsr = async (ctx, query, skipRedirect) => {
+export const apolloQuerySsr = async ({
+  ctx,
+  query,
+  variables = {},
+  skipRedirect = false,
+}) => {
   const { req } = ctx;
 
   const { token } = getAppCookies(req);
@@ -56,6 +61,7 @@ export const apolloQuerySsr = async (ctx, query, skipRedirect) => {
         },
       },
       query,
+      variables,
     });
     return data;
   } catch (e) {
