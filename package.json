@@ -42,6 +42,7 @@
     "merge-graphql-schemas": "^1.7.8",
     "micro": "9.3.5-canary.1",
     "micro-cors": "^0.1.1",
+    "mongodb-client-encryption": "^1.2.3",
     "mongoose": "^5.12.10",
     "next": "^10.2.2",
     "next-compose-plugins": "^2.2.1",

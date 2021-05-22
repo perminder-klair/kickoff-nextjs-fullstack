@@ -3,6 +3,7 @@ import Head from 'next/head';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { StoreProvider } from 'easy-peasy';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { ApolloProvider } from '@apollo/client/react';
 
 import withReduxStore from '../utils/with-redux-store';
