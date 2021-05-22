@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import convict from 'convict';
 import fs from 'fs';
 import dotenv from 'dotenv';

@@ -7,6 +7,12 @@ const nextConfig = {
   env: {
     SANITY_TOKEN: '',
   },
+  experimental: {
+    eslint: true,
+  },
+  images: {
+    domains: ['assets.vercel.com'],
+  },
   pageExtensions: ['mdx', 'jsx', 'js'],
   devIndicators: {
     autoPrerender: false,

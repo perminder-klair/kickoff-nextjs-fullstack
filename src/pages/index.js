@@ -1,24 +1,8 @@
-import axios from 'axios';
 import { NextSeo } from 'next-seo';
-
+import Image from 'next/image';
 import Layout from '../components/Layout';
 
 function Index() {
-  const handleContact = () => {
-    console.log('handleContact');
-    axios
-      .post('/api/contact', {
-        firstName: 'Fred',
-        lastName: 'Flintstone',
-      })
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
   return (
     <Layout>
       <NextSeo
@@ -29,15 +13,14 @@ function Index() {
         <h1 className="title">Hello World!</h1>
         <p className="subtitle">
           My first website with <strong>NextJs</strong> and{' '}
-          <strong>Apollo GraphQl</strong>!
+          <strong>Apollo GraphQL</strong>!
         </p>
-        <button
-          type="button"
-          className="button is-light"
-          onClick={handleContact}
-        >
-          Send Contact Message
-        </button>
+        <Image
+          alt="Next.js logo"
+          src="https://assets.vercel.com/image/upload/v1538361091/repositories/next-js/next-js-bg.png"
+          width={1200}
+          height={400}
+        />
       </section>
     </Layout>
   );

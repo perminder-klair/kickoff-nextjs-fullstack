@@ -27,8 +27,8 @@ const Section = styled.section`
 `;
 
 const mutation = gql`
-  mutation login($input: LoginInput!) {
-    login(input: $input) {
+  mutation register($input: RegisterInput!) {
+    register(input: $input) {
       jwt
       user {
         id
@@ -37,7 +37,7 @@ const mutation = gql`
   }
 `;
 
-const Login = () => {
+const Register = () => {
   const router = useRouter();
   const isLoggedIn = useStoreState((state) => state.isLoggedIn.value);
   const setIsLoggedIn = useStoreActions((actions) => actions.isLoggedIn.toggle);
@@ -47,8 +47,8 @@ const Login = () => {
     if (error) {
       swal(error.message);
     }
-    if (data && data.login) {
-      Cookies.set('token', data.login.jwt);
+    if (data && data.register) {
+      Cookies.set('token', data.register.jwt);
       setIsLoggedIn(true);
     }
   }, [error, data]);
@@ -61,10 +61,10 @@ const Login = () => {
 
   return (
     <Layout>
-      <NextSeo title="Login" url={`${config.siteUrl}/auth/login`} />
+      <NextSeo title="Register" url={`${config.siteUrl}/auth/register`} />
       <Section className="section">
         <div className="container">
-          <h2 className="heading">Login</h2>
+          <h2 className="heading">Register</h2>
           <div className="columns is-vcentered">
             <div className="column is-12">
               <LoginForm
@@ -84,4 +84,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

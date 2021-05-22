@@ -1,9 +1,10 @@
 {
   "parser": "babel-eslint",
   "extends": [
+    "next",
     "eslint:recommended",
     "plugin:react/recommended",
-    "airbnb",
+    // "airbnb",
     "plugin:prettier/recommended"
   ],
   "plugins": ["prettier"],
@@ -31,9 +32,15 @@
     "jsx-a11y/no-static-element-interactions": "off"
   },
   "globals": {
-    "window": true
+    "window": true,
+    "process": true,
+    "module": true,
+    "console": true,
+    "global": true,
+    "Promise": true
   },
   "env": {
     "jest": true
-  }
+  },
+  "root": true
 }

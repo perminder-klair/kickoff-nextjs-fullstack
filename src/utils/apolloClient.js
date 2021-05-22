@@ -15,7 +15,7 @@ const httpLink = createHttpLink({
 const authLink = setContext(async (_, { headers }) => {
   // get the authentication token from local storage if it exists
   const token = Cookies.get('token');
-  console.log('token', token);
+  // console.log('token', token);
   // return the headers to the context so httpLink can read them
   return {
     headers: {
@@ -35,11 +35,11 @@ const apolloClientSsr = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export const apolloQuerySsr = async (ctx, query) => {
+export const apolloQuerySsr = async (ctx, query, skipRedirect) => {
   const { req } = ctx;
 
   const { token } = getAppCookies(req);
-  if (!token) {
+  if (!token && skipRedirect === false) {
     return {
       redirect: {
         destination: '/auth/login',
