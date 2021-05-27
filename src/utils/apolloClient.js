@@ -3,8 +3,8 @@ import { setContext } from 'apollo-link-context';
 import { ApolloLink } from 'apollo-link';
 import { createHttpLink } from 'apollo-link-http';
 import Cookies from 'js-cookie';
+import { getAppCookies } from '@zeiq/core';
 
-import { getAppCookies } from './auth';
 import config from './config';
 
 const httpLink = createHttpLink({

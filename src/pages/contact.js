@@ -3,6 +3,7 @@ import { NextSeo } from 'next-seo';
 import styled from 'styled-components';
 import { gql, useMutation } from '@apollo/client';
 import swal from 'sweetalert';
+import { useSubmitContact } from '@zeiq/core';
 
 import config from '../utils/config';
 import Layout from '../components/Layout';
@@ -32,16 +33,17 @@ const mutation = gql`
 `;
 
 const ContactPage = () => {
-  const [execute, { data, error }] = useMutation(mutation);
+  // const [execute, { data, error }] = useMutation(mutation);
+  const [execute] = useSubmitContact();
 
-  useEffect(() => {
-    if (error) {
-      swal(error.message);
-    }
-    if (data && data.contact) {
-      swal('Message sent!');
-    }
-  }, [error, data]);
+  // useEffect(() => {
+  //   if (error) {
+  //     swal(error.message);
+  //   }
+  //   if (data && data.contact) {
+  //     swal('Message sent!');
+  //   }
+  // }, [error, data]);
 
   return (
     <Layout>
@@ -92,7 +94,7 @@ const ContactPage = () => {
             <div className="column is-6">
               <ContactForm
                 onSubmit={async (values) => {
-                  await execute({ variables: { input: values } });
+                  await execute(values);
                 }}
               />
             </div>

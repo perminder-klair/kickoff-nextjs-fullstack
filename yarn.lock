@@ -1700,6 +1700,15 @@
   dependencies:
     tslib "^2.1.0"
 
+"@zeiq/core@^1.0.25":
+  version "1.0.25"
+  resolved "https://registry.yarnpkg.com/@zeiq/core/-/core-1.0.25.tgz#7618f87c89d7323a2d498c015d1f1d3fd4b426d7"
+  integrity sha512-+z4oL3JqW+5Bjdhdc5ri7ieac7PJZB3Ipb8wGbDteLBZevVtrvK9kPiTLBwGh21CuyHGxYTdrQXyE/tb64wSmg==
+  dependencies:
+    "@apollo/client" "^3.3.19"
+    lodash "^4.17.21"
+    sweetalert "^2.1.2"
+
 "@zeit/next-css@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@zeit/next-css/-/next-css-1.0.1.tgz#4f784e841e7ca1b21b3468a902e2c1fa95a3e75c"

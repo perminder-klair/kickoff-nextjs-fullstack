@@ -24,6 +24,7 @@
     "@apollo/client": "^3.3.19",
     "@mdx-js/loader": "^1.6.22",
     "@next/mdx": "^10.2.2",
+    "@zeiq/core": "^1.0.25",
     "@zeit/next-css": "^1.0.1",
     "apollo-link": "^1.2.14",
     "apollo-link-context": "^1.0.20",

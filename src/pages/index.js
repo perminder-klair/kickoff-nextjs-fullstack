@@ -1,8 +1,13 @@
 import { NextSeo } from 'next-seo';
+import { makeId } from '@zeiq/core';
+
 import Image from 'next/image';
 import Layout from '../components/Layout';
 
 function Index() {
+  const id = makeId(20);
+  console.log('id', id);
+
   return (
     <Layout>
       <NextSeo
