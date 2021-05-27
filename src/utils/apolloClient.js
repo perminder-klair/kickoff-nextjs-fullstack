@@ -39,12 +39,12 @@ export const apolloQuerySsr = async ({
   ctx,
   query,
   variables = {},
-  skipRedirect = false,
+  isPrivate = false,
 }) => {
   const { req } = ctx;
 
   const { token } = getAppCookies(req);
-  if (!token && skipRedirect === false) {
+  if (!token && isPrivate === true) {
     return {
       redirect: {
         destination: '/auth/login',

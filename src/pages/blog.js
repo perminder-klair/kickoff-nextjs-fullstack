@@ -53,7 +53,7 @@ const Blog = ({ posts }) => {
 export default Blog;
 
 export async function getServerSideProps(ctx) {
-  const data = await apolloQuerySsr({ ctx, query, skipRedirect: true });
+  const data = await apolloQuerySsr({ ctx, query, isPrivate: false });
   // console.log('apollo data', data);
 
   return {

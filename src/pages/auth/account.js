@@ -67,13 +67,13 @@ export async function getServerSideProps(ctx) {
   const data = await apolloQuerySsr({
     ctx,
     query: meQuery,
-    skipRedirect: false,
+    isPrivate: true,
   });
   // console.log('apollo data', data);
 
   return {
     props: {
-      me: data.me,
+      me: data && data.me ? data.me : {},
     },
   };
 }

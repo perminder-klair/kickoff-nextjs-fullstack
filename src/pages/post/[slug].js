@@ -42,7 +42,7 @@ export async function getServerSideProps(ctx) {
     ctx,
     query,
     variables: { slug: ctx.params.slug },
-    skipRedirect: true,
+    isPrivate: false,
   });
   // console.log('apollo data', data);
 
