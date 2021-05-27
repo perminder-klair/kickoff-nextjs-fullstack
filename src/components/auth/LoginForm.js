@@ -41,6 +41,7 @@ const LoginForm = ({
           onChange={handleChange}
           onBlur={handleBlur}
           placeholder="Your email"
+          data-cy="email"
         />
         {errors.email && touched.email && (
           <p className="help is-danger has-text-left">{errors.email}</p>
@@ -55,6 +56,7 @@ const LoginForm = ({
           onChange={handleChange}
           onBlur={handleBlur}
           placeholder="Your password"
+          data-cy="password"
         />
         {errors.password && touched.password && (
           <p className="help is-danger has-text-left">{errors.password}</p>
@@ -66,6 +68,7 @@ const LoginForm = ({
         className={`button is-primary is-fullwidth ${
           isSubmitting ? 'is-loading' : ''
         }`}
+        data-cy="submit-btn"
       >
         Submit
       </button>

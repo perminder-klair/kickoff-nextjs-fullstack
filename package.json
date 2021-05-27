@@ -6,11 +6,14 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "dev": "next --port 4000",
+    "dev": "next --port 3000",
     "start": "next start",
     "build": "next build",
     "deploy": "vercel --prod",
-    "lint": "eslint --fix --ext .jsx,.js src/**/*.js src/**/**/*.js"
+    "lint": "eslint --fix --ext .jsx,.js src/**/*.js src/**/**/*.js",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test": "start-server-and-test dev http://localhost:3000 cypress:open"
   },
   "husky": {
     "hooks": {
@@ -63,6 +66,7 @@
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.3",
     "cross-env": "^7.0.3",
+    "cypress": "^7.4.0",
     "eslint": "^7.26.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -72,6 +76,7 @@
     "eslint-plugin-react": "^7.23.2",
     "husky": "^6.0.0",
     "jest": "^26.6.3",
-    "prettier": "^2.3.0"
+    "prettier": "^2.3.0",
+    "start-server-and-test": "^1.12.3"
   }
 }

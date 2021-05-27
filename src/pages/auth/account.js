@@ -48,7 +48,7 @@ const Account = ({ me }) => {
           <h2 className="heading">My Account</h2>
           <div className="columns is-vcentered">
             <div className="column is-12">
-              <p>
+              <p data-cy="check-login">
                 {isLoggedIn
                   ? `Welcome! You are logged in as: ${me.email}`
                   : `You are not logged in!`}
