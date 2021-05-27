@@ -25,6 +25,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
+        with:
+          start: npm run dev
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v2
@@ -33,4 +35,3 @@ jobs:
         with:
           name: cypress-screenshots
           path: cypress/screenshots
-          start: npm dev
