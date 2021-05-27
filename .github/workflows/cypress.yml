@@ -25,10 +25,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
-      - run: npm run dev
       # and run all Cypress tests
       - name: Cypress run
         uses: cypress-io/github-action@v2
+        with:
+          start: npm run dev
+          wait-on: 'http://localhost:3000'
+          command: npm run cypress:open
       - uses: actions/upload-artifact@v1
         if: failure()
         with:
