@@ -13,12 +13,6 @@ const conf = convict({
     default: 'development',
     env: 'NODE_ENV',
   },
-  port: {
-    doc: 'The port to bind.',
-    format: 'port',
-    default: 4000,
-    env: 'PORT',
-  },
   webAppUrl: {
     doc: 'Web app url',
     format: String,

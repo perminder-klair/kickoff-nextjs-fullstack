@@ -1460,10 +1460,10 @@
   dependencies:
     tslib "^2.1.0"
 
-"@zeiq/core@^1.0.27":
-  version "1.0.27"
-  resolved "https://registry.yarnpkg.com/@zeiq/core/-/core-1.0.27.tgz#13dcb0a0d2d06b06f9b8532f568c7a28e24294f2"
-  integrity sha512-Sk+98RZnBOFMzXBRkJ/lfl0Ms866rkzKeUQBVXQGYod85PkyPfuBx43YGB06EWboHoCHw/yADhIUfEx6E6xfVA==
+"@zeiq/core@^1.0.30":
+  version "1.0.30"
+  resolved "https://registry.yarnpkg.com/@zeiq/core/-/core-1.0.30.tgz#5f9e6c6111c4e65c73bb79a12b8221516dd1db3c"
+  integrity sha512-+jJZVwfhJAEoVi+L9FIKg1Hpo5NpoGGmgYwMkE7SOoYQ4mic2BH65XesNE8y+bPNJO3B/u5z5PCYrLwj/L1U/w==
   dependencies:
     "@apollo/client" "^3.3.19"
     graphql "^15.5.0"
@@ -1471,10 +1471,10 @@
     styled-components "^5.2.0"
     sweetalert "^2.1.2"
 
-"@zeiq/web@^1.0.29":
-  version "1.0.29"
-  resolved "https://registry.yarnpkg.com/@zeiq/web/-/web-1.0.29.tgz#974bfe3f24124394272c5580e147303868a491c8"
-  integrity sha512-IwOJSY0Ml4C0OE98pdMwNk+OxL5xUIhtql7nBxIz7BXmxdSuEJr2A463Ce0SB61Naedxbws0manNM91nDHbEuA==
+"@zeiq/web@^1.0.30":
+  version "1.0.30"
+  resolved "https://registry.yarnpkg.com/@zeiq/web/-/web-1.0.30.tgz#5e654d562b302cbeda7422bf81f09794bdb9134d"
+  integrity sha512-E1QiMyvIDSxWdvVk3prknIbxV/8e07ZBSI0SMcKnsWRdbUdIUwU/UnAoSnknJUapxxlEkEqT1vQ4557N1bAaBQ==
   dependencies:
     formik "^2.2.8"
     lodash "^4.17.21"

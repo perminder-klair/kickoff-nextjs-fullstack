@@ -1,7 +1,7 @@
 const config = {
   debug: process.env.NODE_ENV === 'development',
-  siteName: process.env.NEXT_PUBLIC_ENV_SITE_NAME || 'My Site',
-  projectKey: 'kickoff-nextjs-apollo',
+  siteName: process.env.NEXT_PUBLIC_ENV_SITE_NAME || 'NextJs FullStack',
+  projectKey: 'kickoff-nextjs-fullstack',
   graphQlUri:
     process.env.NEXT_PUBLIC_ENV_GRAPHQL_URI ||
     'http://localhost:3000/api/graphql',
