@@ -2,12 +2,10 @@ import { useEffect } from 'react';
 import { NextSeo } from 'next-seo';
 import { gql, useMutation } from '@apollo/client';
 import swal from 'sweetalert';
-// import { ContactForm } from '@zeiq/web';
+import { Heading, ContactForm } from '@zeiq/web';
 
 import config from '../utils/config';
 import Layout from '../components/Layout';
-import ContactForm from '../components/global/ContactForm';
-import { Heading } from '../components/elements';
 
 const mutation = gql`
   mutation contact($input: ContactInput!) {

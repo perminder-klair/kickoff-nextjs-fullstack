@@ -3,11 +3,10 @@ import { NextSeo } from 'next-seo';
 import { gql, useMutation } from '@apollo/client';
 import swal from 'sweetalert';
 import { useRouter } from 'next/router';
+import { Heading, SetPasswordForm } from '@zeiq/web';
 
 import config from '../../utils/config';
 import Layout from '../../components/Layout';
-import SetPasswordForm from '../../components/auth/SetPasswordForm';
-import { Heading } from '../../components/elements';
 
 const mutation = gql`
   mutation setNewPassword($input: SetNewPassword!) {

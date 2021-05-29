@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import Link from 'next/link';
+import { AnchorLink } from '@zeiq/web';
 
 import config from '../../utils/config';
-import { AnchorLink } from '../elements';
 
 const Container = styled.div``;
 
@@ -16,18 +17,16 @@ const Footer = () => (
             </p>
           </div>
           <div className="md:flex-1 md:px-4 text-center md:text-right">
-            <AnchorLink
-              className="py-2 px-4 inline-block hover:underline"
-              href="/about"
-            >
-              About
-            </AnchorLink>
-            <AnchorLink
-              className="py-2 px-4 inline-block hover:underline"
-              href="/contact"
-            >
-              Contact
-            </AnchorLink>
+            <Link href="/about">
+              <AnchorLink className="py-2 px-4 inline-block hover:underline">
+                About
+              </AnchorLink>
+            </Link>
+            <Link href="/contact">
+              <AnchorLink className="py-2 px-4 inline-block hover:underline">
+                Contact
+              </AnchorLink>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,11 +1,11 @@
 import { NextSeo } from 'next-seo';
 import { useStoreState } from 'easy-peasy';
 import { gql, useQuery } from '@apollo/client';
+import { Heading } from '@zeiq/web';
 
 import config from '../../utils/config';
 import Layout from '../../components/Layout';
 import { apolloQuerySsr } from '../../utils/apolloClient';
-import { Heading } from '../../components/elements';
 
 const meQuery = gql`
   query me {

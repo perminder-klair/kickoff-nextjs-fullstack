@@ -1,12 +1,12 @@
 import React from 'react';
 import { NextSeo } from 'next-seo';
 import { gql } from '@apollo/client';
+import { Heading } from '@zeiq/web';
 
 import config from '../utils/config';
 import Layout from '../components/Layout';
 import NewsItem from '../components/blog/PostItem';
 import { apolloQuerySsr } from '../utils/apolloClient';
-import { Heading } from '../components/elements';
 
 const query = gql`
   query allPosts {

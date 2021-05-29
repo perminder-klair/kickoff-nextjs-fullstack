@@ -2,11 +2,10 @@ import { useEffect } from 'react';
 import { NextSeo } from 'next-seo';
 import { gql, useMutation } from '@apollo/client';
 import swal from 'sweetalert';
+import { Heading, ForgotPasswordForm } from '@zeiq/web';
 
 import config from '../../utils/config';
 import Layout from '../../components/Layout';
-import ForgotPasswordForm from '../../components/auth/ForgotPasswordForm';
-import { Heading } from '../../components/elements';
 
 const mutation = gql`
   mutation forgotPassword($input: ForgotPasswordInput!) {

@@ -5,7 +5,7 @@ import Footer from './global/Footer';
 const Container = styled.div.attrs({ className: 'container mx-auto' })``;
 
 const Layout = ({ children }) => (
-  <Container className="">
+  <Container>
     <Header />
     {children}
     <Footer />

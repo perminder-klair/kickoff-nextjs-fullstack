@@ -5,11 +5,10 @@ import { gql, useMutation } from '@apollo/client';
 import swal from 'sweetalert';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
+import { Heading, LoginForm } from '@zeiq/web';
 
 import config from '../../utils/config';
 import Layout from '../../components/Layout';
-import LoginForm from '../../components/auth/LoginForm';
-import { Heading } from '../../components/elements';
 
 const mutation = gql`
   mutation login($input: LoginInput!) {

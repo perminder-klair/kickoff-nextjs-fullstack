@@ -2,11 +2,11 @@ import React from 'react';
 import { NextSeo } from 'next-seo';
 import { gql } from '@apollo/client';
 import ReactMarkdown from 'react-markdown';
+import { Heading } from '@zeiq/web';
 
 import config from '../../utils/config';
 import LayoutMdx from '../../components/LayoutMdx';
 import { apolloQuerySsr } from '../../utils/apolloClient';
-import { Heading } from '../../components/elements';
 
 const query = gql`
   query singlePost($slug: String!) {

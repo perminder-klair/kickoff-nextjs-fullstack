@@ -2,6 +2,7 @@ import App from 'next/app';
 import Head from 'next/head';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { ZeiqProvider } from '@zeiq/web';
 import { StoreProvider } from 'easy-peasy';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { ApolloProvider } from '@apollo/client/react';
@@ -18,17 +19,19 @@ class MyApp extends App {
     const { Component, pageProps, reduxStore } = this.props;
 
     return (
-      <ThemeProvider theme={theme}>
-        <StoreProvider store={reduxStore}>
-          <ApolloProvider client={apolloClient}>
-            <Head>
-              <title>{config.siteName}</title>
-            </Head>
-            <Component {...pageProps} />
-            <GlobalStyle />
-          </ApolloProvider>
-        </StoreProvider>
-      </ThemeProvider>
+      <ZeiqProvider value={{ theme }}>
+        <ThemeProvider theme={theme}>
+          <StoreProvider store={reduxStore}>
+            <ApolloProvider client={apolloClient}>
+              <Head>
+                <title>{config.siteName}</title>
+              </Head>
+              <Component {...pageProps} />
+              <GlobalStyle />
+            </ApolloProvider>
+          </StoreProvider>
+        </ThemeProvider>
+      </ZeiqProvider>
     );
   }
 }

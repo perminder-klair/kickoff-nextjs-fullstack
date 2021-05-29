@@ -5,8 +5,8 @@ import Router from 'next/router';
 import Cookies from 'js-cookie';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { AnchorLink } from '@zeiq/web';
 
-import { AnchorLink } from '../elements';
 import config from '../../utils/config';
 
 const Header = () => {
@@ -45,10 +45,18 @@ const Header = () => {
                 </Popover.Button>
               </div>
               <Popover.Group as="nav" className="hidden md:flex space-x-10">
-                <AnchorLink href="/about">About</AnchorLink>
-                <AnchorLink href="/blog">Blog</AnchorLink>
-                <AnchorLink href="/contact">Contact</AnchorLink>
-                <AnchorLink href="/auth/account">Account</AnchorLink>
+                <Link href="/about">
+                  <AnchorLink>About</AnchorLink>
+                </Link>
+                <Link href="/blog">
+                  <AnchorLink>Blog</AnchorLink>
+                </Link>
+                <Link href="/contact">
+                  <AnchorLink>Contact</AnchorLink>
+                </Link>
+                <Link href="/auth/account">
+                  <AnchorLink>Account</AnchorLink>
+                </Link>
               </Popover.Group>
               {isLoggedIn ? (
                 <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
@@ -61,7 +69,9 @@ const Header = () => {
                 </div>
               ) : (
                 <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                  <AnchorLink href="/auth/login">Sign in</AnchorLink>
+                  <Link href="/auth/login">
+                    <a>Sign in</a>
+                  </Link>
                   <Link href="/auth/register">
                     <a className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
                       Sign up
@@ -107,10 +117,18 @@ const Header = () => {
                 </div>
                 <div className="py-6 px-5 space-y-6">
                   <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                    <AnchorLink href="/about">About</AnchorLink>
-                    <AnchorLink href="/blog">Blog</AnchorLink>
-                    <AnchorLink href="/contact">Contact</AnchorLink>
-                    <AnchorLink href="/auth/account">Account</AnchorLink>
+                    <Link href="/about">
+                      <AnchorLink>About</AnchorLink>
+                    </Link>
+                    <Link href="/blog">
+                      <AnchorLink>Blog</AnchorLink>
+                    </Link>
+                    <Link href="/contact">
+                      <AnchorLink>Contact</AnchorLink>
+                    </Link>
+                    <Link href="/auth/account">
+                      <AnchorLink>Account</AnchorLink>
+                    </Link>
                   </div>
                   {isLoggedIn ? (
                     <div>
@@ -123,7 +141,9 @@ const Header = () => {
                     </div>
                   ) : (
                     <div>
-                      <AnchorLink href="/auth/register">Sign up</AnchorLink>
+                      <Link href="/auth/register">
+                        <a>Sign up</a>
+                      </Link>
                       <p className="mt-6 text-center text-base font-medium text-gray-500">
                         Existing customer?{' '}
                         <Link href="/auth/login">
