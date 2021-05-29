@@ -1,7 +1,7 @@
 # Kickoff NextJs FullStack
 
-A starting point using ReactJs, bundled with awesome NextJs.
-Fetch data from Sanity CMS
+Fully re-written using Nextjs and TailwindCSS, includes Graphql Server and CypressJs for testing + Authorization and blog.
+It’s depended on Zeiq Base for elements and helpers
 
 ## Stack
 
@@ -14,6 +14,7 @@ Fetch data from Sanity CMS
 - [heroicons](https://heroicons.com)
 - [tailwindcss](https://tailwindcss.com/)
 - [Apollo Server](https://www.apollographql.com/)
+- [Mongoose MongoDB](https://mongoosejs.com/)
 - [Cypress Testing](https://www.cypress.io/)
 
 ## To use
@@ -37,10 +38,26 @@ To start development server
 yarn dev
 ```
 
+## Testing
+
+To start tests using CypressJs
+
+```
+yarn test
+```
+
 ## Deployment
 
 To deploy to zeit now host
 
 ```
 yarn deploy
+```
+
+## Lint code and check Errors
+
+Using Eslint and Prettier
+
+```
+yarn lint
 ```
