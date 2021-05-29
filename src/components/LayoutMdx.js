@@ -35,7 +35,11 @@ const Container = styled.div`
 
 const LayoutMdx = ({ children }) => (
   <Layout>
-    <Container>{children}</Container>
+    <section className="text-gray-600 body-font">
+      <div className="container px-5 py-24 mx-auto">
+        <Container>{children}</Container>
+      </div>
+    </section>
   </Layout>
 );
 

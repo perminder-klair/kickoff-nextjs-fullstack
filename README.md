@@ -7,6 +7,10 @@ Fetch data from Sanity CMS
 
 - [Next.js](https://nextjs.org/)
 - [React.js](https://facebook.github.io/react/)
+- [Tailwind Blocks](https://tailblocks.cc/)
+- [headlessUI](https://headlessui.dev)
+- [heroicons](https://heroicons.com)
+- [tailwindcss](https://tailwindcss.com/)
 - [Apollo Server](https://www.apollographql.com/)
 - [Cypress Testing](https://www.cypress.io/)
 

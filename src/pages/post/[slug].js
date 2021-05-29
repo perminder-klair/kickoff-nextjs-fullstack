@@ -6,6 +6,7 @@ import ReactMarkdown from 'react-markdown';
 import config from '../../utils/config';
 import LayoutMdx from '../../components/LayoutMdx';
 import { apolloQuerySsr } from '../../utils/apolloClient';
+import { Heading } from '../../components/elements';
 
 const query = gql`
   query singlePost($slug: String!) {
@@ -27,12 +28,12 @@ export default function BlogPost({ post }) {
         description={`Get in touch with us at ${config.siteName}`}
         url={`${config.siteUrl}/post/${post.slug}`}
       />
-      <div className="page-content">
-        <h1 className="title is-1 has-text-centered has-text-weight-bold">
-          {post.title}
-        </h1>
-        <ReactMarkdown>{post.body}</ReactMarkdown>
-      </div>
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 py-24 mx-auto">
+          <Heading type="h1">{post.title}</Heading>
+          <ReactMarkdown>{post.body}</ReactMarkdown>
+        </div>
+      </section>
     </LayoutMdx>
   );
 }

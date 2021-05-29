@@ -5,6 +5,8 @@ import { ThemeProvider } from 'styled-components';
 import { StoreProvider } from 'easy-peasy';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { ApolloProvider } from '@apollo/client/react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'tailwindcss/tailwind.css';
 
 import withReduxStore from '../utils/with-redux-store';
 import apolloClient from '../utils/apolloClient';
@@ -21,10 +23,6 @@ class MyApp extends App {
           <ApolloProvider client={apolloClient}>
             <Head>
               <title>{config.siteName}</title>
-              <link
-                rel="stylesheet"
-                href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
-              />
             </Head>
             <Component {...pageProps} />
             <GlobalStyle />

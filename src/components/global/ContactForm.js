@@ -1,25 +1,9 @@
-import styled from 'styled-components';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
 
-const Container = styled.form`
-  .field {
-    margin-bottom: 2rem !important;
-  }
-  input {
-    min-height: 55px;
-  }
-  button {
-    :hover {
-      color: #000 !important;
-    }
-  }
-  @media screen and (min-width: 769px) {
-    .field-body > .field:not(:last-child) {
-      margin-right: 1.5rem;
-    }
-  }
-`;
+import { Button, TextInput, TextArea } from '../elements';
+
+const formId = 'ContactForm';
 
 const ContactForm = ({
   values,
@@ -31,53 +15,56 @@ const ContactForm = ({
   handleBlur,
 }) => {
   return (
-    <Container onSubmit={handleSubmit} className="pt-5 pb-4">
-      <div className="field">
-        <input
-          className="input is-shadowless"
+    <form className="flex flex-wrap -m-2" onSubmit={handleSubmit} id={formId}>
+      <div className="p-2 w-1/2">
+        <TextInput
+          label="Your Name"
+          name="name"
+          value={values.name}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={errors.name && touched.name ? errors.name : undefined}
+        />
+      </div>
+      <div className="p-2 w-1/2">
+        <TextInput
+          label="Your Email"
           name="email"
           type="email"
           value={values.email}
           onChange={handleChange}
           onBlur={handleBlur}
-          placeholder="Your email"
+          error={errors.email && touched.email ? errors.email : undefined}
         />
-        {errors.email && touched.email && (
-          <p className="help is-danger has-text-left">{errors.email}</p>
-        )}
       </div>
-      <div className="field">
-        <input
-          className="input is-shadowless"
+      <div className="p-2 w-full">
+        <TextArea
+          label="Your Message"
           name="message"
+          type="message"
           value={values.message}
           onChange={handleChange}
           onBlur={handleBlur}
-          placeholder="Enter message"
+          error={errors.message && touched.message ? errors.message : undefined}
         />
-        {errors.message && touched.message && (
-          <p className="help is-danger has-text-left">{errors.message}</p>
-        )}
       </div>
-      <button
-        disabled={isSubmitting}
-        type="submit"
-        className={`button is-primary is-fullwidth ${
-          isSubmitting ? 'is-loading' : ''
-        }`}
-      >
-        Submit
-      </button>
-    </Container>
+      <div className="p-2 w-full">
+        <Button type="submit" form={formId} isLoading={isSubmitting}>
+          Submit
+        </Button>
+      </div>
+    </form>
   );
 };
 
 export default withFormik({
   mapPropsToValues: () => ({
+    name: '',
     email: '',
     message: '',
   }),
   validationSchema: Yup.object().shape({
+    name: Yup.string().required('Name is required!'),
     email: Yup.string()
       .email('Invalid email address')
       .required('Email is required!'),
@@ -85,9 +72,10 @@ export default withFormik({
   }),
 
   handleSubmit: (values, { setSubmitting, props }) => {
+    console.log('handleSubmit', values);
     props.onSubmit(values).finally(() => {
       setSubmitting(false);
     });
   },
-  displayName: 'ContactForm', // helps with React DevTools
+  displayName: formId, // helps with React DevTools
 })(ContactForm);

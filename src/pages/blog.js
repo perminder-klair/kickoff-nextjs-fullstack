@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { NextSeo } from 'next-seo';
 import { gql } from '@apollo/client';
 
@@ -7,11 +6,7 @@ import config from '../utils/config';
 import Layout from '../components/Layout';
 import NewsItem from '../components/blog/PostItem';
 import { apolloQuerySsr } from '../utils/apolloClient';
-
-const Container = styled.div`
-  margin-top: 4rem;
-  margin-bottom: 6rem;
-`;
+import { Heading } from '../components/elements';
 
 const query = gql`
   query allPosts {
@@ -32,19 +27,17 @@ const Blog = ({ posts }) => {
         description={`Get in touch with us at ${config.siteName}`}
         url={`${config.siteUrl}/blog`}
       />
-      <section className="section">
-        <Container className="container">
-          <h2 className="title is-2 has-text-centered has-text-weight-bold">
-            News & Updates
-          </h2>
-          <div className="columns is-centered">
-            <div className="column is-four-fifths">
-              {posts.map((post) => (
-                <NewsItem key={post.id} post={post} />
-              ))}
-            </div>
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="flex flex-col text-center w-full mb-12">
+            <Heading type="h1">News & Updates</Heading>
           </div>
-        </Container>
+          <div className="flex flex-wrap -m-4">
+            {posts.map((post) => (
+              <NewsItem key={post.id} post={post} />
+            ))}
+          </div>
+        </div>
       </section>
     </Layout>
   );

@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { NextSeo } from 'next-seo';
-import styled from 'styled-components';
 import { useStoreState, useStoreActions } from 'easy-peasy';
 import { gql, useMutation } from '@apollo/client';
 import swal from 'sweetalert';
@@ -10,21 +9,7 @@ import Cookies from 'js-cookie';
 import config from '../../utils/config';
 import Layout from '../../components/Layout';
 import LoginForm from '../../components/auth/LoginForm';
-
-const Section = styled.section`
-  p {
-    margin-bottom: 1rem;
-  }
-  .image {
-    width: 500px;
-    height: auto;
-    margin: 0 auto;
-    object-position: center;
-  }
-  .button {
-    margin-top: 2rem;
-  }
-`;
+import { Heading } from '../../components/elements';
 
 const mutation = gql`
   mutation login($input: LoginInput!) {
@@ -62,11 +47,13 @@ const Login = () => {
   return (
     <Layout>
       <NextSeo title="Login" url={`${config.siteUrl}/auth/login`} />
-      <Section className="section">
-        <div className="container">
-          <h2 className="heading">Login</h2>
-          <div className="columns is-vcentered">
-            <div className="column is-12">
+      <section className="text-gray-600 body-font relative">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="flex flex-col text-center w-full mb-12">
+            <Heading type="h1">Login</Heading>
+          </div>
+          <div className="lg:w-1/2 md:w-2/3 mx-auto">
+            <div className="flex flex-wrap -m-2">
               <LoginForm
                 onSubmit={async (values) => {
                   await execute({
@@ -79,7 +66,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-      </Section>
+      </section>
     </Layout>
   );
 };

@@ -1,5 +1,4 @@
 const withPlugins = require('next-compose-plugins');
-const withCSS = require('@zeit/next-css');
 const withMDX = require('@next/mdx')();
 
 const nextConfig = {
@@ -8,7 +7,7 @@ const nextConfig = {
     SANITY_TOKEN: '',
   },
   images: {
-    domains: ['assets.vercel.com'],
+    domains: ['assets.vercel.com', 'dummyimage.com'],
   },
   pageExtensions: ['mdx', 'jsx', 'js'],
   devIndicators: {
@@ -22,4 +21,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins([withMDX, withCSS], nextConfig);
+module.exports = withPlugins([withMDX], nextConfig);

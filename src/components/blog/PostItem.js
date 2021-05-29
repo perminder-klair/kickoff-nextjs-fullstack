@@ -1,44 +1,33 @@
 import React from 'react';
-import styled from 'styled-components';
 import dayjs from 'dayjs';
 import Link from 'next/link';
-
-const Container = styled.article`
-  && {
-    border-top: none;
-    margin-top: 2.3rem;
-    .title {
-      margin-top: 0.6rem;
-      margin-bottom: 0.5rem;
-    }
-    a {
-      color: ${(props) => props.theme.darkAccent};
-    }
-  }
-`;
+import Image from 'next/image';
 
 const PostItem = ({ post }) => (
-  <Container className="media">
-    <div className="media-content">
-      <div className="content">
-        <span className="has-text-weight-bold is-uppercase">
+  <div className="p-4 md:w-1/3">
+    <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+      <Image
+        className="lg:h-48 md:h-36 w-full object-cover object-center"
+        src="https://dummyimage.com/722x402"
+        alt="blog"
+        width={722}
+        height={402}
+      />
+      <div className="p-6">
+        <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
           {dayjs(post.createdAt).format('MMMM YYYY')}
-        </span>
+        </h2>
         <Link href={`/post/${post.slug}`}>
           <a>
-            <h3 className="title is-3 has-text-weight-bold">{post.title}</h3>
+            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
+              {post.title}
+            </h1>
           </a>
         </Link>
+        <p className="leading-relaxed mb-3">Read article...</p>
       </div>
-      <nav className="level is-mobile">
-        <div className="level-left">
-          <Link href={`/post/${post.slug}`}>
-            <a className="level-item">Read</a>
-          </Link>
-        </div>
-      </nav>
     </div>
-  </Container>
+  </div>
 );
 
 export default PostItem;

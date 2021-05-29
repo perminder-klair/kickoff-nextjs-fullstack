@@ -1,26 +1,11 @@
 import { NextSeo } from 'next-seo';
-import styled from 'styled-components';
 import { useStoreState } from 'easy-peasy';
 import { gql, useQuery } from '@apollo/client';
 
 import config from '../../utils/config';
 import Layout from '../../components/Layout';
 import { apolloQuerySsr } from '../../utils/apolloClient';
-
-const Section = styled.section`
-  p {
-    margin-bottom: 1rem;
-  }
-  .image {
-    width: 500px;
-    height: auto;
-    margin: 0 auto;
-    object-position: center;
-  }
-  .button {
-    margin-top: 2rem;
-  }
-`;
+import { Heading } from '../../components/elements';
 
 const meQuery = gql`
   query me {
@@ -42,21 +27,16 @@ const Account = ({ me }) => {
   return (
     <Layout>
       <NextSeo title="My Account" url={`${config.siteUrl}/auth/account`} />
-
-      <Section className="section">
-        <div className="container">
-          <h2 className="heading">My Account</h2>
-          <div className="columns is-vcentered">
-            <div className="column is-12">
-              <p data-cy="check-login">
-                {isLoggedIn
-                  ? `Welcome! You are logged in as: ${me.email}`
-                  : `You are not logged in!`}
-              </p>
-            </div>
-          </div>
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 py-24 mx-auto">
+          <Heading type="h2">My Account</Heading>
+          <p data-cy="check-login">
+            {isLoggedIn
+              ? `Welcome! You are logged in as: ${me.email}`
+              : `You are not logged in!`}
+          </p>
         </div>
-      </Section>
+      </section>
     </Layout>
   );
 };

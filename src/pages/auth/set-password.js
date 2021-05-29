@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { NextSeo } from 'next-seo';
-import styled from 'styled-components';
 import { gql, useMutation } from '@apollo/client';
 import swal from 'sweetalert';
 import { useRouter } from 'next/router';
@@ -8,21 +7,7 @@ import { useRouter } from 'next/router';
 import config from '../../utils/config';
 import Layout from '../../components/Layout';
 import SetPasswordForm from '../../components/auth/SetPasswordForm';
-
-const Section = styled.section`
-  p {
-    margin-bottom: 1rem;
-  }
-  .image {
-    width: 500px;
-    height: auto;
-    margin: 0 auto;
-    object-position: center;
-  }
-  .button {
-    margin-top: 2rem;
-  }
-`;
+import { Heading } from '../../components/elements';
 
 const mutation = gql`
   mutation setNewPassword($input: SetNewPassword!) {
@@ -52,12 +37,13 @@ const SetPassword = () => {
         title="Set Password"
         url={`${config.siteUrl}/auth/set-password`}
       />
-
-      <Section className="section">
-        <div className="container">
-          <h2 className="heading">Set a new Password</h2>
-          <div className="columns is-vcentered">
-            <div className="column is-12">
+      <section className="text-gray-600 body-font relative">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="flex flex-col text-center w-full mb-12">
+            <Heading type="h1">Set a new Password</Heading>
+          </div>
+          <div className="lg:w-1/2 md:w-2/3 mx-auto">
+            <div className="flex flex-wrap -m-2">
               <SetPasswordForm
                 onSubmit={async (values) => {
                   await execute({
@@ -73,7 +59,7 @@ const SetPassword = () => {
             </div>
           </div>
         </div>
-      </Section>
+      </section>
     </Layout>
   );
 };

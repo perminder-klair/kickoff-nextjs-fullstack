@@ -1,25 +1,9 @@
-import styled from 'styled-components';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
 
-const Container = styled.form`
-  .field {
-    margin-bottom: 2rem !important;
-  }
-  input {
-    min-height: 55px;
-  }
-  button {
-    :hover {
-      color: #000 !important;
-    }
-  }
-  @media screen and (min-width: 769px) {
-    .field-body > .field:not(:last-child) {
-      margin-right: 1.5rem;
-    }
-  }
-`;
+import { Button, TextInput } from '../elements';
+
+const formId = 'LoginForm';
 
 const LoginForm = ({
   values,
@@ -31,48 +15,37 @@ const LoginForm = ({
   handleBlur,
 }) => {
   return (
-    <Container onSubmit={handleSubmit} className="pt-5 pb-4">
-      <div className="field">
-        <input
-          className="input is-shadowless"
+    <form className="flex flex-wrap -m-2" onSubmit={handleSubmit} id={formId}>
+      <div className="p-2 w-1/2">
+        <TextInput
+          label="Your Email"
           name="email"
           type="email"
           value={values.email}
           onChange={handleChange}
           onBlur={handleBlur}
-          placeholder="Your email"
-          data-cy="email"
+          error={errors.email && touched.email ? errors.email : undefined}
         />
-        {errors.email && touched.email && (
-          <p className="help is-danger has-text-left">{errors.email}</p>
-        )}
       </div>
-      <div className="field">
-        <input
-          className="input is-shadowless"
+      <div className="p-2 w-1/2">
+        <TextInput
+          label="Password"
           name="password"
           type="password"
           value={values.password}
           onChange={handleChange}
           onBlur={handleBlur}
-          placeholder="Your password"
-          data-cy="password"
+          error={
+            errors.password && touched.password ? errors.password : undefined
+          }
         />
-        {errors.password && touched.password && (
-          <p className="help is-danger has-text-left">{errors.password}</p>
-        )}
       </div>
-      <button
-        disabled={isSubmitting}
-        type="submit"
-        className={`button is-primary is-fullwidth ${
-          isSubmitting ? 'is-loading' : ''
-        }`}
-        data-cy="submit-btn"
-      >
-        Submit
-      </button>
-    </Container>
+      <div className="p-2 w-full">
+        <Button type="submit" form={formId} isLoading={isSubmitting}>
+          Submit
+        </Button>
+      </div>
+    </form>
   );
 };
 
@@ -85,7 +58,7 @@ export default withFormik({
     email: Yup.string()
       .email('Invalid email address')
       .required('Email is required!'),
-    password: Yup.string().required('Email is required!').min(6),
+    password: Yup.string().required('Password is required!').min(6),
   }),
 
   handleSubmit: (values, { setSubmitting, props }) => {
@@ -93,5 +66,5 @@ export default withFormik({
       setSubmitting(false);
     });
   },
-  displayName: 'LoginForm', // helps with React DevTools
+  displayName: formId, // helps with React DevTools
 })(LoginForm);

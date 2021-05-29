@@ -1,25 +1,9 @@
-import styled from 'styled-components';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
 
-const Container = styled.form`
-  .field {
-    margin-bottom: 2rem !important;
-  }
-  input {
-    min-height: 55px;
-  }
-  button {
-    :hover {
-      color: #000 !important;
-    }
-  }
-  @media screen and (min-width: 769px) {
-    .field-body > .field:not(:last-child) {
-      margin-right: 1.5rem;
-    }
-  }
-`;
+import { Button, TextInput } from '../elements';
+
+const formId = 'ForgotPasswordForm';
 
 const ForgotPasswordForm = ({
   values,
@@ -31,31 +15,24 @@ const ForgotPasswordForm = ({
   handleBlur,
 }) => {
   return (
-    <Container onSubmit={handleSubmit} className="pt-5 pb-4">
-      <div className="field">
-        <input
-          className="input is-shadowless"
+    <form className="flex flex-wrap -m-2" onSubmit={handleSubmit} id={formId}>
+      <div className="p-2 w-1/2">
+        <TextInput
+          label="Your Email"
           name="email"
           type="email"
           value={values.email}
           onChange={handleChange}
           onBlur={handleBlur}
-          placeholder="Your email"
+          error={errors.email && touched.email ? errors.email : undefined}
         />
-        {errors.email && touched.email && (
-          <p className="help is-danger has-text-left">{errors.email}</p>
-        )}
       </div>
-      <button
-        disabled={isSubmitting}
-        type="submit"
-        className={`button is-primary is-fullwidth ${
-          isSubmitting ? 'is-loading' : ''
-        }`}
-      >
-        Submit
-      </button>
-    </Container>
+      <div className="p-2 w-full">
+        <Button type="submit" form={formId} isLoading={isSubmitting}>
+          Submit
+        </Button>
+      </div>
+    </form>
   );
 };
 
@@ -74,5 +51,5 @@ export default withFormik({
       setSubmitting(false);
     });
   },
-  displayName: 'ForgotPasswordForm', // helps with React DevTools
+  displayName: formId, // helps with React DevTools
 })(ForgotPasswordForm);
