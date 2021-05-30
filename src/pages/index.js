@@ -8,6 +8,7 @@ import config from '../utils/config';
 function Index() {
   const id = makeId(20);
   console.log('random id', id);
+  asdf;
 
   return (
     <Layout>
