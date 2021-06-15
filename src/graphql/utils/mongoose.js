@@ -9,7 +9,7 @@ function connectDatabase(uri) {
       console.log(`Connected to ${info.host}:${info.port}/${info.name}`);
     });
 
-  mongoose.connect(uri);
+  mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 }
 
 export default connectDatabase;
