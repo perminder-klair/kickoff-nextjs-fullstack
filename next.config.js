@@ -3,9 +3,6 @@ const withMDX = require('@next/mdx')();
 
 const nextConfig = {
   target: 'serverless',
-  env: {
-    SANITY_TOKEN: '',
-  },
   images: {
     domains: ['assets.vercel.com', 'dummyimage.com'],
   },

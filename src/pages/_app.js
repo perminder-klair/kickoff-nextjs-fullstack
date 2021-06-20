@@ -1,39 +1,60 @@
-import App from 'next/app';
 import Head from 'next/head';
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
 import { ZeiqProvider } from '@zeiq/web';
 import { StoreProvider } from 'easy-peasy';
+import { DefaultSeo } from 'next-seo';
+import { ThemeProvider as NextThemeProvider } from 'next-themes';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { ApolloProvider } from '@apollo/client/react';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import 'tailwindcss/tailwind.css';
+import NProgress from 'nprogress';
+import Router from 'next/router';
 
 import withReduxStore from '../utils/with-redux-store';
 import apolloClient from '../utils/apolloClient';
-import theme, { GlobalStyle } from '../utils/theme';
+import GlobalStyles from '../utils/styles';
 import config from '../utils/config';
 
-class MyApp extends App {
-  render() {
-    const { Component, pageProps, reduxStore } = this.props;
+Router.events.on('routeChangeStart', (url) => {
+  console.log(`Loading: ${url}`);
+  NProgress.start();
+});
+Router.events.on('routeChangeComplete', () => {
+  NProgress.done();
+});
+Router.events.on('routeChangeError', () => NProgress.done());
 
-    return (
-      <ZeiqProvider value={{ theme }}>
-        <ThemeProvider theme={theme}>
+function MyApp({ Component, pageProps, reduxStore }) {
+  return (
+    <>
+      <GlobalStyles />
+      <Head>
+        <script async src="/scripts.js" />
+      </Head>
+      <DefaultSeo
+        titleTemplate={`%s | ${config.siteName}`}
+        description="Free Images Gallery Builder"
+        openGraph={{
+          type: 'website',
+          locale: 'en_IE',
+          url: config.siteUrl,
+          site_name: config.siteName,
+        }}
+        twitter={{
+          handle: '@galllery',
+          site: '@site',
+          cardType: 'summary_large_image',
+        }}
+      />
+      <ZeiqProvider>
+        <NextThemeProvider attribute="class" defaultTheme="light">
           <StoreProvider store={reduxStore}>
             <ApolloProvider client={apolloClient}>
-              <Head>
-                <title>{config.siteName}</title>
-              </Head>
               <Component {...pageProps} />
-              <GlobalStyle />
             </ApolloProvider>
           </StoreProvider>
-        </ThemeProvider>
+        </NextThemeProvider>
       </ZeiqProvider>
-    );
-  }
+    </>
+  );
 }
 
 export default withReduxStore(MyApp);

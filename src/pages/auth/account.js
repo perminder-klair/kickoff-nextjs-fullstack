@@ -5,7 +5,6 @@ import { Heading } from '@zeiq/web';
 
 import config from '../../utils/config';
 import Layout from '../../components/Layout';
-import { apolloQuerySsr } from '../../utils/apolloClient';
 
 const meQuery = gql`
   query me {
@@ -16,13 +15,13 @@ const meQuery = gql`
   }
 `;
 
-const Account = ({ me }) => {
+const Account = () => {
+  const apiData = useQuery(meQuery, { fetchPolicy: 'cache-and-network' });
   const isLoggedIn = useStoreState((state) => state.isLoggedIn.value);
-  const { data } = useQuery(meQuery);
+  const me = apiData.data ? apiData.data.me : {};
 
   console.log('isLoggedIn', isLoggedIn);
-  console.log('server side data', me);
-  console.log('client side data', data);
+  console.log('me data', me);
 
   return (
     <Layout>
@@ -42,18 +41,3 @@ const Account = ({ me }) => {
 };
 
 export default Account;
-
-export async function getServerSideProps(ctx) {
-  const data = await apolloQuerySsr({
-    ctx,
-    query: meQuery,
-    isPrivate: true,
-  });
-  // console.log('apollo data', data);
-
-  return {
-    props: {
-      me: data && data.me ? data.me : {},
-    },
-  };
-}

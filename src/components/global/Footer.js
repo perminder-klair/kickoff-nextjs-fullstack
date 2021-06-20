@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { AnchorLink } from '@zeiq/web';
 
+import ToggleDarkMode from './ToggleDarkMode';
 import config from '../../utils/config';
 
 const Container = styled.div``;
@@ -27,6 +28,7 @@ const Footer = () => (
                 Contact
               </AnchorLink>
             </Link>
+            <ToggleDarkMode />
           </div>
         </div>
       </div>

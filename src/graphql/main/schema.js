@@ -10,6 +10,15 @@ const typeDefs = gql`
   type Query {
     hello: String
   }
+
+  type UploadResult {
+    signedUrl: String!
+    fileUrl: String!
+  }
+
+  type Mutation {
+    getSignedUploadUrl(fileKey: String!, fileType: String!): UploadResult
+  }
 `;
 
 export default typeDefs;

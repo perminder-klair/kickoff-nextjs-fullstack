@@ -13,6 +13,12 @@ const conf = convict({
     default: 'development',
     env: 'NODE_ENV',
   },
+  appName: {
+    doc: 'App Name',
+    format: String,
+    default: 'Kickoff Nextjs Fullstack',
+    env: 'APP_NAME',
+  },
   webAppUrl: {
     doc: 'Web app url',
     format: String,
@@ -48,6 +54,31 @@ const conf = convict({
       format: String,
       default: '',
     },
+  },
+  aws: {
+    bucket: {
+      doc: 'S3 Bucket name.',
+      format: String,
+      default: '',
+      env: 'AWS_BUCKET',
+    },
+    region: {
+      doc: 'S3 Region.',
+      format: String,
+      default: 'us-west-2',
+    },
+    identityPoolId: {
+      doc: 'AWS IDENTITY_POOL_ID',
+      format: String,
+      default: '',
+      env: 'AWS_POOL_ID',
+    },
+  },
+  logdnaKey: {
+    doc: 'Logdna Logger Key.',
+    format: String,
+    default: '',
+    env: 'LOGDNA_KEY',
   },
 });
 

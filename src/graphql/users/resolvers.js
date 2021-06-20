@@ -1,7 +1,7 @@
 import { isEmpty } from 'lodash';
 import randomstring from 'randomstring';
 
-import { generateToken } from '../utils/auth';
+import { generateToken, isLoggedIn } from '../utils/auth';
 import User from './database';
 import mailer, { renderTemplate } from '../utils/mailer';
 import config from '../utils/config';
@@ -10,11 +10,9 @@ import clientConfig from '../../utils/config';
 export default {
   Query: {
     me: async (root, args, ctx) => {
-      if (!ctx.user) {
-        throw new Error('Not logged in');
-      }
+      const me = await isLoggedIn(ctx);
 
-      return User.findOne({ _id: ctx.user.id });
+      return User.findOne({ _id: me.id });
     },
   },
   Mutation: {
@@ -63,12 +61,10 @@ export default {
       return { user, jwt: token };
     },
     updateMe: async (root, { input }, ctx) => {
-      if (!ctx.user) {
-        throw new Error('Not logged in');
-      }
+      const me = await isLoggedIn(ctx);
 
       const objUpdate = {};
-      const objFind = { _id: ctx.user.id };
+      const objFind = { _id: me.id };
 
       // update user
       if (input.email) {
@@ -80,7 +76,7 @@ export default {
         await User.updateOne(objFind, objUpdate);
       }
 
-      return User.findOne({ _id: ctx.user.id });
+      return User.findOne({ _id: me.id });
     },
     forgotPassword: async (root, { input }) => {
       const resetPasswordToken = randomstring.generate();

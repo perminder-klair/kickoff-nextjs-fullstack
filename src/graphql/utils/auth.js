@@ -26,3 +26,10 @@ export function generateToken(user) {
   );
   return `JWT ${jwtToken}`;
 }
+
+export async function isLoggedIn(ctx) {
+  if (!ctx.user) {
+    throw new Error('Not logged in');
+  }
+  return ctx.user;
+}
