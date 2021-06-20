@@ -27,7 +27,7 @@ const Blog = ({ posts }) => {
         description={`Get in touch with us at ${config.siteName}`}
         url={`${config.siteUrl}/blog`}
       />
-      <section tw="text-gray-600 body-font">
+      <section tw="text-gray-600">
         <div tw="container px-5 py-24 mx-auto">
           <div tw="flex flex-col text-center w-full mb-12">
             <Heading type="h1">News & Updates</Heading>

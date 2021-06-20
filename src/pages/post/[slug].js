@@ -28,7 +28,7 @@ export default function BlogPost({ post }) {
         description={`Get in touch with us at ${config.siteName}`}
         url={`${config.siteUrl}/post/${post.slug}`}
       />
-      <section tw="text-gray-600 body-font">
+      <section tw="text-gray-600">
         <div tw="container px-5 py-24 mx-auto">
           <Heading type="h1">{post.title}</Heading>
           <ReactMarkdown>{post.body}</ReactMarkdown>

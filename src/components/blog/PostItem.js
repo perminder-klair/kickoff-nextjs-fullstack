@@ -14,14 +14,12 @@ const PostItem = ({ post }) => (
         height={402}
       />
       <div tw="p-6">
-        <h2 tw="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
+        <h2 tw="tracking-widest text-xs font-medium text-gray-400 mb-1">
           {dayjs(post.createdAt).format('MMMM YYYY')}
         </h2>
         <Link href={`/post/${post.slug}`}>
           <a>
-            <h1 tw="title-font text-lg font-medium text-gray-900 mb-3">
-              {post.title}
-            </h1>
+            <h1 tw="text-lg font-medium text-gray-900 mb-3">{post.title}</h1>
           </a>
         </Link>
         <p tw="leading-relaxed mb-3">Read article...</p>

@@ -47,7 +47,7 @@ const Login = () => {
   return (
     <Layout>
       <NextSeo title="Login" url={`${config.siteUrl}/auth/login`} />
-      <section tw="text-gray-600 body-font relative">
+      <section tw="text-gray-600 relative">
         <div tw="container px-5 py-24 mx-auto">
           <div tw="flex flex-col text-center w-full mb-12">
             <Heading type="h1">Login</Heading>

@@ -1,10 +1,10 @@
 import winston from 'winston';
-import LogdnaWinston from 'logdna-winston';
-import os from 'os';
-import { config } from 'dotenv';
+// import LogdnaWinston from 'logdna-winston';
+// import os from 'os';
+// import config from './config';
 
-const logdnaKey = config.get('logdnaKey');
-const logdnaApp = config.get('logdnaKey');
+// const logdnaKey = config.get('logdnaKey');
+// const logdnaApp = config.get('logdnaKey');
 
 const logger = winston.createLogger({
   level: 'info',
@@ -18,16 +18,16 @@ const logger = winston.createLogger({
         winston.format.simple(),
       ),
     }),
-    new LogdnaWinston({
-      key: logdnaKey,
-      hostname: os.hostname(),
-      // ip: os.networkInterfaces().lo0[0].address,
-      // mac: os.networkInterfaces().lo0[0].mac,
-      app: logdnaApp,
-      env: process.env.NODE_ENV,
-      // level: 'info', // Uses Winston log levels: https://github.com/winstonjs/winston#logging-levels
-      handleExceptions: true,
-    }),
+    // new LogdnaWinston({
+    //   key: logdnaKey,
+    //   hostname: os.hostname(),
+    //   // ip: os.networkInterfaces().lo0[0].address,
+    //   // mac: os.networkInterfaces().lo0[0].mac,
+    //   app: logdnaApp,
+    //   env: process.env.NODE_ENV,
+    //   // level: 'info', // Uses Winston log levels: https://github.com/winstonjs/winston#logging-levels
+    //   handleExceptions: true,
+    // }),
   ],
   exceptionHandlers: [
     new winston.transports.File({ filename: 'exceptions.log' }),

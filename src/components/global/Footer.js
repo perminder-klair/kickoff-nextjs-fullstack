@@ -6,7 +6,7 @@ import ToggleDarkMode from './ToggleDarkMode';
 import config from '../../utils/config';
 
 const Footer = () => (
-  <div tw="footer-2  pt-6 md:pt-12">
+  <div tw="pt-6 md:pt-12">
     <div tw="border-t border-solid border-gray-900 mt-4 py-4">
       <div tw="container px-4 mx-auto">
         <div tw="md:flex md:-mx-4 md:items-center">

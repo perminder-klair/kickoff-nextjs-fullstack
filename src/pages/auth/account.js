@@ -27,7 +27,7 @@ const Account = () => {
   return (
     <Layout>
       <NextSeo title="My Account" url={`${config.siteUrl}/auth/account`} />
-      <section tw="text-gray-600 body-font">
+      <section tw="text-gray-600">
         <div tw="container px-5 py-24 mx-auto">
           <Heading type="h2">My Account</Heading>
           <p data-cy="check-login">
