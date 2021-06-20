@@ -1,4 +1,4 @@
-import React from 'react';
+import 'twin.macro';
 import { NextSeo } from 'next-seo';
 import { gql } from '@apollo/client';
 import ReactMarkdown from 'react-markdown';
@@ -28,8 +28,8 @@ export default function BlogPost({ post }) {
         description={`Get in touch with us at ${config.siteName}`}
         url={`${config.siteUrl}/post/${post.slug}`}
       />
-      <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
+      <section tw="text-gray-600 body-font">
+        <div tw="container px-5 py-24 mx-auto">
           <Heading type="h1">{post.title}</Heading>
           <ReactMarkdown>{post.body}</ReactMarkdown>
         </div>

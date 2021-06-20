@@ -1,3 +1,4 @@
+import 'twin.macro';
 import { useEffect } from 'react';
 import { NextSeo } from 'next-seo';
 import { gql, useMutation } from '@apollo/client';
@@ -36,13 +37,13 @@ const SetPassword = () => {
         title="Set Password"
         url={`${config.siteUrl}/auth/set-password`}
       />
-      <section className="text-gray-600 body-font relative">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-12">
+      <section tw="text-gray-600 body-font relative">
+        <div tw="container px-5 py-24 mx-auto">
+          <div tw="flex flex-col text-center w-full mb-12">
             <Heading type="h1">Set a new Password</Heading>
           </div>
-          <div className="lg:w-1/2 md:w-2/3 mx-auto">
-            <div className="flex flex-wrap -m-2">
+          <div tw="lg:w-1/2 md:w-2/3 mx-auto">
+            <div tw="flex flex-wrap -m-2">
               <SetPasswordForm
                 onSubmit={async (values) => {
                   await execute({

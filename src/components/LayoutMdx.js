@@ -1,3 +1,4 @@
+import 'twin.macro';
 import styled from 'styled-components';
 import Layout from './Layout';
 
@@ -35,8 +36,8 @@ const Container = styled.div`
 
 const LayoutMdx = ({ children }) => (
   <Layout>
-    <section className="text-gray-600 body-font">
-      <div className="container px-5 py-24 mx-auto">
+    <section tw="text-gray-600 body-font">
+      <div tw="container px-5 py-24 mx-auto">
         <Container>{children}</Container>
       </div>
     </section>

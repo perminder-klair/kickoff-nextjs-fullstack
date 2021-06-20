@@ -1,4 +1,4 @@
-import React from 'react';
+import 'twin.macro';
 import { NextSeo } from 'next-seo';
 import { gql } from '@apollo/client';
 import { Heading } from '@zeiq/web';
@@ -27,12 +27,12 @@ const Blog = ({ posts }) => {
         description={`Get in touch with us at ${config.siteName}`}
         url={`${config.siteUrl}/blog`}
       />
-      <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-12">
+      <section tw="text-gray-600 body-font">
+        <div tw="container px-5 py-24 mx-auto">
+          <div tw="flex flex-col text-center w-full mb-12">
             <Heading type="h1">News & Updates</Heading>
           </div>
-          <div className="flex flex-wrap -m-4">
+          <div tw="flex flex-wrap -m-4">
             {posts.map((post) => (
               <NewsItem key={post.id} post={post} />
             ))}
