@@ -6,7 +6,6 @@ import Router from 'next/router';
 import Cookies from 'js-cookie';
 import { Popover, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import { AnchorLink } from '@zeiq/web';
 
 import config from '../../utils/config';
 
@@ -47,16 +46,16 @@ const Header = () => {
               </div>
               <Popover.Group as="nav" tw="hidden md:flex space-x-10">
                 <Link href="/about">
-                  <AnchorLink>About</AnchorLink>
+                  <a>About</a>
                 </Link>
                 <Link href="/blog">
-                  <AnchorLink>Blog</AnchorLink>
+                  <a>Blog</a>
                 </Link>
                 <Link href="/contact">
-                  <AnchorLink>Contact</AnchorLink>
+                  <a>Contact</a>
                 </Link>
                 <Link href="/auth/account">
-                  <AnchorLink>Account</AnchorLink>
+                  <a>Account</a>
                 </Link>
               </Popover.Group>
               {isLoggedIn ? (
@@ -119,16 +118,16 @@ const Header = () => {
                 <div tw="py-6 px-5 space-y-6">
                   <div tw="grid grid-cols-2 gap-y-4 gap-x-8">
                     <Link href="/about">
-                      <AnchorLink>About</AnchorLink>
+                      <a>About</a>
                     </Link>
                     <Link href="/blog">
-                      <AnchorLink>Blog</AnchorLink>
+                      <a>Blog</a>
                     </Link>
                     <Link href="/contact">
-                      <AnchorLink>Contact</AnchorLink>
+                      <a>Contact</a>
                     </Link>
                     <Link href="/auth/account">
-                      <AnchorLink>Account</AnchorLink>
+                      <a>Account</a>
                     </Link>
                   </div>
                   {isLoggedIn ? (

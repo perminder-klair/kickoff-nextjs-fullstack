@@ -1,6 +1,5 @@
 import 'twin.macro';
 import Link from 'next/link';
-import { AnchorLink } from '@zeiq/web';
 
 import ToggleDarkMode from './ToggleDarkMode';
 import config from '../../utils/config';
@@ -17,14 +16,10 @@ const Footer = () => (
           </div>
           <div tw="md:flex-1 md:px-4 text-center md:text-right">
             <Link href="/about">
-              <AnchorLink tw="py-2 px-4 inline-block hover:underline">
-                About
-              </AnchorLink>
+              <a tw="py-2 px-4 inline-block hover:underline">About</a>
             </Link>
             <Link href="/contact">
-              <AnchorLink tw="py-2 px-4 inline-block hover:underline">
-                Contact
-              </AnchorLink>
+              <a tw="py-2 px-4 inline-block hover:underline">Contact</a>
             </Link>
             <ToggleDarkMode />
           </div>
