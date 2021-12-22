@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-// import Email from 'email-templates';
+import Email from 'email-templates';
 // import path from 'path';
 
 import conf from './config';
@@ -14,17 +14,19 @@ export default nodemailer.createTransport({
 
 export const renderTemplate = (file, locals = {}) => {
   console.log('render template', file, locals);
-  // const templatesDir = path.resolve(__dirname, '..', 'templates');
-  // const template = path.join(templatesDir, file);
-  // const email = new Email({
-  //   views: {
-  //     options: {
-  //       extension: 'ejs',
-  //     },
-  //   },
-  // });
-  // return Promise.all([
-  //   email.render(`${template}/html`, locals),
-  //   email.render(`${template}/subject`, locals),
-  // ]);
+  const templatesDir = path.resolve(__dirname, '..', 'templates');
+  const template = path.join(templatesDir, file);
+
+  const email = new Email({
+    views: {
+      options: {
+        extension: 'js',
+      },
+    },
+  });
+
+  return Promise.all([
+    email.render(`${template}/html`, locals),
+    email.render(`${template}/subject`, locals),
+  ]);
 };

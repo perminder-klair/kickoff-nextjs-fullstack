@@ -1,4 +1,5 @@
-import { ApolloServer, makeExecutableSchema } from 'apollo-server-micro';
+import { ApolloServer } from 'apollo-server-micro';
+import { makeExecutableSchema } from '@graphql-tools/schema';
 import connectDatabase from '../../graphql/utils/mongoose';
 import { typeDefs, resolvers } from '../../graphql';
 import { isAuthenticated } from '../../graphql/utils/auth';
@@ -19,7 +20,7 @@ const server = new ApolloServer({
   }),
 });
 
-const optionsHandler = (req, res) => {
+const optionsHandler = async (req, res) => {
   if (req.method === 'OPTIONS') {
     res.end();
     return;

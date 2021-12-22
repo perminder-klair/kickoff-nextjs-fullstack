@@ -16,8 +16,16 @@ const typeDefs = gql`
     fileUrl: String!
   }
 
+  input ContactInput {
+    fullName: String!
+    email: String!
+    subject: String
+    message: String!
+  }
+
   type Mutation {
     getSignedUploadUrl(fileKey: String!, fileType: String!): UploadResult
+    contact(input: ContactInput!): Success
   }
 `;
 

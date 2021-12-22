@@ -2,7 +2,6 @@ const withPlugins = require('next-compose-plugins');
 const withMDX = require('@next/mdx')();
 
 const nextConfig = {
-  target: 'serverless',
   images: {
     domains: ['assets.vercel.com', 'dummyimage.com'],
   },

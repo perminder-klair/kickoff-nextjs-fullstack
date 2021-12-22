@@ -1,4 +1,4 @@
-import { mergeTypes, mergeResolvers } from 'merge-graphql-schemas';
+import { mergeTypeDefs, mergeResolvers } from '@graphql-tools/merge';
 
 import MainSchema from './main/schema';
 import MainResolvers from './main/resolvers';
@@ -7,7 +7,7 @@ import UsersResolvers from './users/resolvers';
 import PostsSchema from './posts/schema';
 import PostsResolvers from './posts/resolvers';
 
-export const typeDefs = mergeTypes([MainSchema, UsersSchema, PostsSchema]);
+export const typeDefs = mergeTypeDefs([MainSchema, UsersSchema, PostsSchema]);
 export const resolvers = mergeResolvers([
   MainResolvers,
   UsersResolvers,
