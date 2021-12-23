@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable no-param-reassign */
 import React from 'react';
 import { initializeStore } from '../store';

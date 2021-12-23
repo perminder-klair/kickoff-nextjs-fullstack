@@ -1,12 +1,12 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "extends": [
-    "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:@next/next/recommended",
     "airbnb",
-    "plugin:prettier/recommended"
+    "prettier"
   ],
-  "plugins": ["prettier"],
+  "plugins": ["react", "prettier"],
   "rules": {
     "prettier/prettier": [
       "error",
@@ -25,6 +25,7 @@
     "react/prop-types": "off",
     "react/forbid-prop-types": "off",
     "react/jsx-props-no-spreading": "off",
+    "react/function-component-definition": "off",
     "jsx-a11y/anchor-is-valid": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "jsx-a11y/click-events-have-key-events": "off",
@@ -38,8 +39,17 @@
     "global": true,
     "Promise": true
   },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
   "env": {
-    "jest": true
+    "browser": true,
+    "es2021": true,
+    "node": true
   },
   "root": true
 }

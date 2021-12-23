@@ -4,6 +4,7 @@ import path from 'path';
 import mjml2html from 'mjml';
 
 import conf from './config';
+
 const fs = require('fs').promises;
 
 export const templatesDir = path.resolve(

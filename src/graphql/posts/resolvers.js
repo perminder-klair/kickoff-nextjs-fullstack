@@ -26,11 +26,7 @@ const data = [
 
 export default {
   Query: {
-    allPosts: () => {
-      return data;
-    },
-    singlePost: (root, args) => {
-      return find(data, { slug: args.slug });
-    },
+    allPosts: () => data,
+    singlePost: (root, args) => find(data, { slug: args.slug }),
   },
 };
