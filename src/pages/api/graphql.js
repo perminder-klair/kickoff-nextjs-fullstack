@@ -19,14 +19,17 @@ const server = new ApolloServer({
     user: await isAuthenticated(req),
   }),
 });
+const startServer = server.start();
 
 const optionsHandler = async (req, res) => {
   if (req.method === 'OPTIONS') {
     res.end();
     return;
   }
+
+  await startServer;
   // eslint-disable-next-line consistent-return
-  return server.createHandler({ path: '/api/graphql' })(req, res);
+  await server.createHandler({ path: '/api/graphql' })(req, res);
 };
 
 export const config = {
