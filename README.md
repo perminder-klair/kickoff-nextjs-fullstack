@@ -38,6 +38,14 @@ To start development server
 yarn dev
 ```
 
+## To build email templates
+
+Visit:
+
+```
+http://localhost:3000/api/build-emails
+```
+
 ## Testing
 
 To start tests using CypressJs
