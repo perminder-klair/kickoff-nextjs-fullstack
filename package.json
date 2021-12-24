@@ -10,7 +10,7 @@
     "start": "next start",
     "build": "next build",
     "deploy": "vercel --prod",
-    "lint": "eslint --fix --ext .jsx,.js src/**/*.js src/**/**/*.js",
+    "lint": "eslint --fix --ext .jsx,.js src/**",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "test": "start-server-and-test dev http://localhost:3000 cypress:open"
