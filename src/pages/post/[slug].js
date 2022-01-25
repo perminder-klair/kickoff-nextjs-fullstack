@@ -1,7 +1,7 @@
 import 'twin.macro';
 import { NextSeo } from 'next-seo';
 import { gql } from '@apollo/client';
-import ReactMarkdown from 'react-markdown';
+import md from 'markdown-it';
 import { Heading } from '@zeiq/web';
 
 import config from '../../utils/config';
@@ -29,10 +29,10 @@ export default function BlogPost({ post }) {
         url={`${config.siteUrl}/post/${post.slug}`}
       />
       <section tw="text-gray-600">
-        <div tw="container px-5 py-24 mx-auto">
+        <article className="prose" tw="container px-5 py-24 mx-auto">
           <Heading type="h1">{post.title}</Heading>
-          <ReactMarkdown>{post.body}</ReactMarkdown>
-        </div>
+          <div dangerouslySetInnerHTML={{ __html: md().render(post.body) }} />
+        </article>
       </section>
     </LayoutMdx>
   );
