@@ -8,7 +8,6 @@ It’s depended on Zeiq Base for elements and helpers
 - [Next.js](https://nextjs.org/)
 - [React.js](https://facebook.github.io/react/)
 - [Zeiq Base](https://github.com/zeiq-co/zeiq-base)
-- [Next.js](https://nextjs.org/)
 - [Tailwind Blocks](https://tailblocks.cc/)
 - [headlessUI](https://headlessui.dev)
 - [heroicons](https://heroicons.com)
