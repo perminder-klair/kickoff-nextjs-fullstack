@@ -46,7 +46,7 @@
     "dayjs": "^1.10.7",
     "dotenv": "^16.0.0",
     "easy-peasy": "^5.0.4",
-    "ejs": "^3.1.6",
+    "ejs": "^3.1.7",
     "email-templates": "^8.0.9",
     "formik": "^2.2.9",
     "graphql": "^16.3.0",
