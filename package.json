@@ -42,7 +42,7 @@
     "apollo-link-http": "^1.5.17",
     "apollo-server-micro": "^3.6.3",
     "bcryptjs": "^2.4.3",
-    "convict": "^6.2.1",
+    "convict": "^6.2.3",
     "dayjs": "^1.10.7",
     "dotenv": "^16.0.0",
     "easy-peasy": "^5.0.4",
