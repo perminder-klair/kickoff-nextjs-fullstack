@@ -14,7 +14,7 @@ This is a [Next.js](https://nextjs.org/) project.
 - cypress (e2e testing) (pending)
 - eslint (linting) (pending)
 - prettier (code formatting) (pending)
-- husky (git hooks) (pending)
+- lint-staged (linting staged files) (pending)
 
 ## Getting Started
 
