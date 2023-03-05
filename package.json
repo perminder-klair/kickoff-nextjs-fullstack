@@ -22,7 +22,7 @@
     "react-hook-form": "^7.43.4",
     "styled-components": "^5.3.8",
     "typescript": "4.9.5",
-    "zustand": "^4.3.5"
+    "zustand": "^3.7.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.54.0",

@@ -9,11 +9,11 @@ This is a [Next.js](https://nextjs.org/) project.
 - @next/mdx (mdx support)
 - tailwindcss (css framework)
 - react-hook-form (form management)
-- lodash (utility library) (pending)
+- lodash (utility library)
 - jest (testing) (pending)
 - cypress (e2e testing) (pending)
-- eslint (linting) (pending)
-- prettier (code formatting) (pending)
+- eslint (linting)
+- prettier (code formatting)
 - lint-staged (linting staged files) (pending)
 
 ## Getting Started
