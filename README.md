@@ -6,14 +6,13 @@ This is a [Next.js](https://nextjs.org/) project.
 
 - zustand (state management) (pending)
 - react-query (data fetching) (pending)
-- @next/mdx (mdx support) (pending)
+- @next/mdx (mdx support)
 - tailwindcss (css framework)
 - formik (form management) (pending)
 - react-hook-form (form management) OR formik
 - yup (form validation) (pending)
 - lodash (utility library) (pending)
 - next-seo (seo management) (pending)
-- twin.macro (css-in-js) (pending)
 - jest (testing) (pending)
 - cypress (e2e testing) (pending)
 

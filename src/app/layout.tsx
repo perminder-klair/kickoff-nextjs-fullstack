@@ -1,7 +1,10 @@
 import { Suspense } from 'react';
+import { Inter } from 'next/font/google'
 import Loading from './loading';
 import StyledComponentsRegistry from '../lib/registry';
 import './globals.css';
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -16,11 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <StyledComponentsRegistry>
-          <Suspense fallback={<Loading/>}>
-          {children}
-          </Suspense>
-        </StyledComponentsRegistry>
+        <main className={`${inter.className}`}>
+          <StyledComponentsRegistry>
+            <Suspense fallback={<Loading/>}>
+            {children}
+            </Suspense>
+          </StyledComponentsRegistry>
+        </main>
       </body>
     </html>
   )
